@@ -35,21 +35,7 @@ public class Solution
         @Override
         public String toString()
         {
-            //return "Cat name is " + name + (mother.name == null ? ", no mother" : (", mother is " + mother.name)) + (father.name == null ? ", no father" : (", father is " + father.name));
-            if ((mother.name != null) & (father.name != null))
-                return "Cat name is " + name + " mother is " + mother.name + ", father is " + father.name;
-            else
-            {
-                if ((mother.name == null) & (father.name == null))
-                    return "Cat name is " + name + ", no mother " + ", no father";
-                else
-                {
-                    if (mother.name == null)
-                        return "Cat name is " + name + ", no mother " + ", father is " + father.name;
-                    else
-                        return "Cat name is " + name + ", mother is " + mother.name + ", no father";
-                }
-            }
+            return "Cat name is " + name + (mother == null ? ", no mother" : (", mother is " + mother.name)) + (father == null ? ", no father" : (", father is " + father.name));
         }
     }
 }
