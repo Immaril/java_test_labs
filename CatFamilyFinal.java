@@ -3,37 +3,33 @@ public class Solution
     public static void main(String[] args) throws IOException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-          String []catArray=new String[6];
 
-        for(int i=0; i< catArray.length; i++)
-            catArray[i]=reader.readLine();
+        Cat []catArray=new Cat[6];
 
-        Cat gFather = new Cat(catArray[0],null,null);
-        Cat gMother = new Cat(catArray[1],null,null);
-        Cat Father= new Cat(catArray[2],null,catArray[0]);
-        Cat Mother = new Cat(catArray[3],catArray[1],null);
-        Cat Daughter = new Cat (catArray[4],catArray[3],catArray[2]);
-        Cat Son = new Cat(catArray[5],catArray[3],catArray[2]);
+        catArray[0] = new Cat(reader.readLine(), null, null);
+        catArray[1]=new Cat (reader.readLine(), null,null);
+        catArray[2]=new Cat (reader.readLine(),catArray[0],null);
+        catArray[3]=new Cat(reader.readLine(),null,catArray[1]);
+        catArray[4]=new Cat (reader.readLine(),catArray[2],catArray[3]);
+        catArray[5]=new Cat(reader.readLine(),catArray[2],catArray[3]);
 
-        System.out.println(gFather);
-        System.out.println(gMother);
-        System.out.println(Father);
-        System.out.println(Mother);
-        System.out.println(Daughter);
-        System.out.print(Son);
+        reader.close();
+
+        for (Cat i:catArray)
+            System.out.println(Arrays.toString(catArray));
     }
 
     public static class Cat
     {
         private String name;
-        private String mother;
-        private String father;
+        private Cat mother;
+        private Cat father;
 
-        Cat(String name, String mother, String father )
+        Cat(String name, Cat mother, Cat father )
         {
             this.name = name;
-            this.mother = mother;
-            this.father = father;
+            this.mother=mother;
+            this.father=father;
         }
 
         @Override
