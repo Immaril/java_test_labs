@@ -35,7 +35,9 @@ public class Solution
         @Override
         public String toString()
         {
-            return "Cat name is " + name + (mother == null ? ", no mother" : (", mother is " + mother.name)) + (father == null ? ", no father" : (", father is " + father.name));
+            return "Cat name is " + name + 
+            (mother == null ? ", no mother" : (", mother is " + mother.name)) + 
+            (father == null ? ", no father" : (", father is " + father.name));
         }
     }
 }
