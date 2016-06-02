@@ -19,17 +19,17 @@ public class Solution
         for (int i=0; i<array.length;i++)
             array[i]=Integer.parseInt(reader.readLine());
         reader.close();
-        revers(array);
+        reverse(array);
         printArray(array);
     }
-    private static int[] revers(int[] array)
+    private static int[] reverse(int[] array)
     {
         int temp=0;
         for (int i=0; i<array.length/2;i++)
         {
             temp = array[i];
-            array[i] = array[9-i];
-            array[9-i]=temp;
+            array[i] = array[(array.length-1)-i];
+            array[(array.length-1)-i]=temp;
         }
         return array;
     }
