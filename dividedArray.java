@@ -21,13 +21,17 @@ public class Solution
         int[] bigArray = new int[20];
         int[] smallArray1=new int[10];
         int[] smallArray2=new int[10];
+        
         for (int i=0; i<bigArray.length;i++)
             bigArray[i]=Integer.parseInt(reader.readLine());
+        reader.close();
+        
         for (int i=0; i<smallArray1.length;i++)
         {
             smallArray1[i] = bigArray[i];
             smallArray2[i] = bigArray[(bigArray.length>>1)+i];
         }
+        
         for(int i=0; i<smallArray2.length;i++)
         System.out.println(smallArray2[i]);
 
