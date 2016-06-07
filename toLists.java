@@ -9,7 +9,6 @@ import java.util.ArrayList;
 4. Выведи найденную строку на экран.
 5. Если таких строк несколько, выведи каждую с новой строки.
 */
-
 public class Solution
 {
     public static void main(String[] args) throws Exception
@@ -17,21 +16,21 @@ public class Solution
         //напишите тут ваш код
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> list = new ArrayList<>();
-        ArrayList<String> listMax = new ArrayList<>();
 
         int count = 0;
 
         for (int i = 0; i<5; i++)
+        {
             list.add(reader.readLine());
+            if((list.get(i).length())>count)
+                count=list.get(i).length();
+        }
         reader.close();
 
-        for (int i=0; i<list.size(); i++)
+        for (int i=0; i<list.size();i++)
         {
-            if (list.get(i).length() >= listMax.get(count).length())
-                listMax.set(count,list.get(i));
-            if (list.get(i).length() == listMax.get(count).length())
-                count=count+1;
+            if (list.get(i).length()==count)
+                System.out.println(list.get(i));
         }
-        System.out.println(listMax);
     }
 }
