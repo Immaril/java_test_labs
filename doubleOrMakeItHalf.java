@@ -27,14 +27,18 @@ public class Solution
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> list = new ArrayList<>();
-        
+        String a;
+
+
         while(true)
         {
-            if (reader.readLine().isEmpty()) break;
-            list.add(reader.readLine());
+            a=reader.readLine();
+            if (a.isEmpty()) break;
+            list.add(a);
         }
-        
-        list=fix(list);
+        reader.close();
+
+        fix(list);
 
         for (String s : list)
             System.out.println(s);
@@ -47,7 +51,7 @@ public class Solution
         int i=0;
         while (i<list.size())
         {
-            if ((list.get(i).contains("р")&&(list.get(i).contains("л"))))
+            if (!(list.get(i).contains("р")&&!(list.get(i).contains("л")))||(list.get(i).contains("р")&&(list.get(i).contains("л"))))
                 i++;
             else
             {
@@ -60,6 +64,7 @@ public class Solution
                         i+=2;
                     }
             }
+
         }
         return list;
 
