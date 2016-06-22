@@ -14,16 +14,12 @@ public class Solution
         printIdea(new Idea());
     }
     public static void printIdea(Idea idea){
-        System.out.print(idea);
+        System.out.print(idea.getDescription());
     }
     //Добавьте тут класс Idea
     public static class Idea{
-        public static String getDescription(String a){
-            String b="No Idea...";
-            if (a!=null)
-                return a;
-            else
-                return b;
+        public static String getDescription(){
+            return "No Idea...";
         }
     }
 }
