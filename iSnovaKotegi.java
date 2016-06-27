@@ -5,7 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-/* Задача:  Программа вводит с клавиатуры данные про котов и выводит их на экран. Пример:
+/* Нужно исправить программу, чтобы компилировалась и работала
+Задача:  Программа вводит с клавиатуры данные про котов и выводит их на экран. Пример:
 Cat name is Barsik, age is 6, weight is 5, tail = 22
 Cat name is Murka, age is 8, weight is 7, tail = 20
 */
@@ -20,11 +21,11 @@ public class Solution
 
         while (true)
         {
-            System.out.print("Введите имя кота или оставьте пустым для завершения ввода: ");
+            System.out.print("Введите имя кота или оставьте пустым для завершения ввода: ");//мои дополнения
             String name = reader.readLine();
-            System.out.println("");
+            System.out.println("");//мои дополнения
             if (name.isEmpty()) break;
-            try
+            try//Весь блок try-catch
             {
                 System.out.print("Введите возраст: ");
                 int age = Integer.parseInt(reader.readLine());
@@ -32,10 +33,10 @@ public class Solution
                 System.out.print("Введите вес: ");
                 int weight = Integer.parseInt(reader.readLine());
                 System.out.println("");
-                System.out.print("Введите длину ховста: ");
+                System.out.print("Введите длину хвоста: ");
                 int tailLenght = Integer.parseInt(reader.readLine());
                 System.out.println("");
-                Cat cat = new Cat(name, age, weight, tailLenght );
+                Cat cat = new Cat(name, age, weight, tailLenght ); // здесь добавил age, weight, tailLenght - конструктора с одним именем нет
                 CATS.add(cat);
             }
             catch (NumberFormatException e)
